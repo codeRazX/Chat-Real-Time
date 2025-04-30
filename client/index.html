@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Real-time Chat</title>
+    <title>Real-Time Chat</title>
     <link rel="stylesheet" href="style.css">
     <script src="/socket.io/socket.io.js"></script>
     <script type="module" src="main.js" defer></script>
@@ -28,9 +28,9 @@
 
     <section id="chat" class="chat container">
         <p class="total-user">Users: <span id="total-user"></span></p>
-        <img id="out-room" class="icon" src="assets/out.svg" alt="Icon go out room">
+        <img id="out-room" class="icon" src="assets/out.svg" alt="Leave room icon">
         <span id="create-room-data"></span>
-        <h2 id="name-room">Football</h2>
+        <h2 id="name-room"></h2>
 
         <ul id="chat-messages">
     
@@ -53,7 +53,7 @@
                
                 <div class="form-block">
                     <label for="name-user">Your Nick:</label>
-                    <input type="text" id="user" name="user" placeholder="Type a nick for this season">
+                    <input type="text" id="user" name="user" placeholder="Type a nickname for this session">
                 </div>
                
                 <button type="button" id="add-room-btn">Send Data</button>
