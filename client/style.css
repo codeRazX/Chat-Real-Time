@@ -1,0 +1,301 @@
+:root{
+    --colorText: #222;
+}
+
+*,*::after,*::before{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html{
+    font-size: 62.5%;
+}
+body{
+    background-color: #E1E1E1;
+    height: 100vh;
+    overflow-x: hidden;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 1.6rem;
+}
+[class*= "container"]{
+    max-width: 120rem;
+    width: 95%;
+    margin: 2rem auto;
+}
+header{
+    text-align: center;
+    color: var(--colorText);
+}
+.nav-rooms{
+    color: var(--colorText);
+}
+.nav-rooms h2{
+    font-size: 2.2rem;
+    margin-bottom: .5rem;
+}
+.rooms-label{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem;
+}
+.rooms-label button{
+    border: none;
+    padding: 1rem 2rem;
+    background-color: var(--colorText);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    font-family: inherit;
+    transition: transform 100ms linear, background-color 200ms linear, color 200ms linear;
+}
+.rooms-label button:hover{
+    transform: scale(1.05);
+    background-color: #CCC;
+    color: #222;
+
+}
+.rooms-label button:last-of-type{
+    background-color: #66FF33;
+    color: black;
+    font-family: sans-serif;
+}
+.rooms-label button:last-of-type:hover,
+.overlay form button:hover,
+#form button:hover{
+    background-color: #03d303;
+    color: white;
+}
+#no-rooms-msg{
+    font-weight: bold;
+}
+
+
+.chat{
+    width: 95%;
+    height: 60%;
+    max-height: 60%;
+    border: 1px solid #CCC;
+    padding: 10px;
+    color: var(--colorText);
+    font-weight: bold;
+    position: relative;
+    padding-bottom: 12rem;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #CCC;
+    background-color: whitesmoke;
+    display: none;
+    opacity: 0;
+    transform: scale(0.1);
+}
+.chat h2{
+    text-align: center;
+    font-size: 2.2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #E1E1E1;
+    text-transform: uppercase;
+}
+#create-room-data{
+    font-size: 1.2rem;
+    position: absolute;
+    color: #CCC;
+    left: 50%;
+    top: 10%;
+    transform: translate(-50%,10%);
+}
+#chat-messages{
+    list-style: none;
+    margin-top: 4rem;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    max-height: 100%;
+}
+#chat-messages li{
+    padding: 1rem;
+    border-radius: 5px;
+}
+#chat-messages li:nth-child(even){
+    background-color: #E1E1E1;
+}
+
+#form{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 5rem;
+    display: flex;
+    width: 100%;
+    gap: .5rem;
+    padding: 5px;
+    overflow: hidden;
+}
+
+#message{
+    padding: 0 1rem;
+    border: 1px solid #CCC;
+    background-color: var(--colorText);
+    color: white;
+    font-family: inherit;
+    flex: 4;
+    border-radius: 999px;
+    
+}
+.total-user{
+    position: absolute;
+    top: 1.5rem;
+    right: 2rem;
+    color: gray;
+    font-size: 1.4rem;
+}
+.icon{
+    width: 3rem;
+    height: 3rem;
+    transform: rotate(180deg);
+    position: absolute;
+    top: 1rem;
+    left: 2rem;
+    cursor: pointer;
+}
+.icon:hover{
+    background-color: #CCC;
+    border-radius: 5px;
+    padding: 0 .5rem;
+}
+#message:focus{
+    outline: none;
+    background-color: #111;
+}
+
+#form button{
+    flex: 1;
+    font-family: sans-serif;
+    color: black;
+    font-size: 1.8rem;
+    font-weight: bold;
+    background-color: #66FF33;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+#form button:focus{
+    outline: none;
+    background-color: #03d303;
+}
+
+
+
+.overlay{
+    position: fixed;
+    background-color: rgb(0 0 0 /.4);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+.overlay form{
+    width: 80%;
+    background-color: #E1E1E1;
+    color: var(--colorText);
+    padding: 1rem;
+    border-radius: 5px;
+    position: relative;
+}
+
+.overlay .form-block{
+    display: flex;
+    flex-direction: column;
+    gap: .2rem;
+    margin-bottom: 1rem;
+}
+.overlay form input{
+    flex: 1;
+    padding: 1rem;
+    border-radius: 5px;
+    border: 1px solid gray;
+    background-color: whitesmoke;
+}
+.overlay form input:focus{
+    outline: none;
+    border: 1px solid #66FF33;
+}
+.overlay form label{
+    font-weight: bold;
+}
+.overlay form fieldset{
+    padding: 1rem;
+    border: 1px solid var(--colorText);
+}
+.overlay form fieldset legend{
+    padding: 1rem;
+    background-color: var(--colorText);
+    color: whitesmoke;
+    font-weight: bold;
+    border: 1px solid #CCC;
+    border-radius: 5px;
+}
+.overlay form button{
+    padding: 1rem 2rem;
+    border: none;
+    font-family: sans-serif;
+    background-color: #09F;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+    
+}
+@media (min-width: 768px) {
+    .overlay form{
+        width: 50%;
+    }
+}
+#close-btn{
+    position: absolute;
+    top: .5rem;
+    right: .5rem;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1.8rem;
+}
+.actived{
+    display: flex;
+}
+.error{
+    color: red;
+    font-family: inherit;
+}
+
+
+.appear{
+    animation: appear 200ms linear forwards;
+}
+.disappear{
+    animation: disappear 300ms linear forwards;
+}
+@keyframes appear{
+    from{
+        opacity: 0;
+        transform: scale(0.1);
+    }
+
+    to{
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+@keyframes disappear{
+    from{
+        opacity: 1;
+        transform: scale(1);
+    }
+    to{
+        opacity: 0;
+        transform: scale(0.1);
+    }
+}
